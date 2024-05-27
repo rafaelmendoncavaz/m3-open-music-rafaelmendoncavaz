@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ===== Styles ===== -->
+
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/globalStyles.css">
+
+    <!-- ===== Scripts ===== -->
+
+    <script type="module" src="./src/scripts/index.js" defer></script>
+
+    <title>Open Music</title>
+  </head>
+  <body>
+
+    <!-- CABEÇALHO -->
+
+    <header class="header__container">
+
+      <!-- DESENVOLVA AQUI OS ELEMENTOS DO CABEÇALHO -->
+
+      <div class="header__content">
+
+        <h1 class="header__title">
+
+          <span>o</span>pen <span>m</span>usic
+        </h1>
+
+        <button class="header__button__theme--toggle">
+        </button>
+
+      </div>
+
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main id="main__container">
+
+      <!-- SEÇÃO DE FILTRO POR GENERO -->
+
+      <section id="section__filter__container">
+
+        <!-- DESENVOLVA AQUI OS ELEMENTOS DA SEÇÃO -->
+
+        <h2 class="section__filter__title">
+
+          Gênero Musical
+
+        </h2>
+
+        <nav class="section__filter__genres">
+
+          <span class="genres">
+
+            Todos
+
+          </span>
+          
+          <span class="genres">
+
+            Pop
+
+          </span>
+          
+          <span class="genres">
+
+            MPB
+
+          </span>
+          
+          <span class="genres">
+
+            Forró
+
+          </span>
+          
+          <span class="genres">
+
+            Samba
+
+          </span>
+          
+          <span class="genres">
+
+            Baião
+
+          </span>
+          
+          <span class="genres">
+
+            Rap
+
+          </span>
+          
+          <span class="genres">
+
+            Hip-Hop
+
+          </span>
+
+        </nav>
+
+      </section>
+
+      <!-- SEÇÃO DE FILTRO POR PREÇO -->
+
+      <section id="section__pricerange__container">
+
+        <!-- DESENVOLVA AQUI OS ELEMENTOS DA SEÇÃO -->
+
+        <div class="pricerange--setprice">
+
+          <h3 class="setprice__title">
+            
+            Definir Preço
+
+          </h3>
+
+          <h3 class="setprice__range">
+
+            Até <span id="price--range">R$ 100</span>
+
+          </h3>
+
+          <input type="range" name="setprice" id="input--price-range" min="10" max="500" step="10">
+
+        </div>
+
+      </section>
+
+      <!-- SEÇÃO DE ALBUNS -->
+
+      <section id="section__albums__container">
+
+        <!-- DESENVOLVA AQUI OS ELEMENTOS DA SEÇÃO -->
+
+        <h3 class="section__albums__title">
+
+          Albuns Encontrados
+
+        </h3>
+
+        <ul class="albums__list__content">
+
+          <li class="albums--display">
+
+            <img src="./src/assets/imgs/cover-1.jpg" alt="Album Cover" class="albums--cover"/>
+
+            <h4 class="album__title">
+
+              Acabou o Chorare
+
+            </h4>
+
+            <div class="list__band__genre__content">
+
+              <p class="band-name">
+
+                Novos Baianos
+
+              </p>
+
+              <p class="album-genre">
+
+                MPB
+
+              </p>
+
+              <div class="price__buy__content">
+
+                <h4 class="album-price">
+
+                  R$ 137,91
+
+                </h4>
+
+                <button class="list__button--buy">
+
+                  Comprar
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </li>
+
+          <li class="albums--display">
+
+            <img src="./src/assets/imgs/cover-2.jpg" alt="Album Cover" class="albums--cover"/>
+
+            <h4 class="album__title">
+
+              The Wall
+
+            </h4>
+
+            <div class="list__band__genre__content">
+
+              <p class="band-name">
+
+                Pink Floyd
+
+              </p>
+
+              <p class="album-genre">
+
+                Rock
+
+              </p>
+
+              <div class="price__buy__content">
+
+                <h4 class="album-price">
+
+                  R$ 123,56
+
+                </h4>
+
+                <button class="list__button--buy">
+
+                  Comprar
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </li>
+
+          <li class="albums--display">
+
+            <img src="./src/assets/imgs/cover-3.jpg" alt="Album Cover" class="albums--cover"/>
+
+            <h4 class="album__title">
+
+              To Pimp a Butterfly
+
+            </h4>
+
+            <div class="list__band__genre__content">
+
+              <p class="band-name">
+
+                Kendrick Lamar
+
+              </p>
+
+              <p class="album-genre">
+
+                Rap
+
+              </p>
+
+              <div class="price__buy__content">
+
+                <h4 class="album-price">
+
+                  R$ 102,66
+
+                </h4>
+
+                <button class="list__button--buy">
+
+                  Comprar
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </li>
+
+          <li class="albums--display">
+
+            <img src="./src/assets/imgs/cover-2.jpg" alt="Album Cover" class="albums--cover"/>
+
+            <h4 class="album__title">
+
+              The Wall
+
+            </h4>
+
+            <div class="list__band__genre__content">
+
+              <p class="band-name">
+
+                Pink Floyd
+
+              </p>
+
+              <p class="album-genre">
+
+                Rock
+
+              </p>
+
+              <div class="price__buy__content">
+
+                <h4 class="album-price">
+
+                  R$ 123,56
+
+                </h4>
+
+                <button class="list__button--buy">
+
+                  Comprar
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </li>
+
+          <li class="albums--display">
+
+            <img src="./src/assets/imgs/cover-1.jpg" alt="Album Cover" class="albums--cover"/>
+
+            <h4 class="album__title">
+
+              Acabou o Chorare
+
+            </h4>
+
+            <div class="list__band__genre__content">
+
+              <p class="band-name">
+
+                Novos Baianos
+
+              </p>
+
+              <p class="album-genre">
+
+                MPB
+
+              </p>
+
+              <div class="price__buy__content">
+
+                <h4 class="album-price">
+
+                  R$ 137,91
+
+                </h4>
+
+                <button class="list__button--buy">
+
+                  Comprar
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </li>
+
+          <li class="albums--display">
+
+            <img src="./src/assets/imgs/cover-3.jpg" alt="Album Cover" class="albums--cover"/>
+
+            <h4 class="album__title">
+
+              To Pimp a Butterfly
+
+            </h4>
+
+            <div class="list__band__genre__content">
+
+              <p class="band-name">
+
+                Kendrick Lamar
+
+              </p>
+
+              <p class="album-genre">
+
+                Rap
+
+              </p>
+
+              <div class="price__buy__content">
+
+                <h4 class="album-price">
+
+                  R$ 102,66
+
+                </h4>
+
+                <button class="list__button--buy">
+
+                  Comprar
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </li>
+
+        </ul>
+
+      </section>
+    </main>
+  </body>
+</html>
