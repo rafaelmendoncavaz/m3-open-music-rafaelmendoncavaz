@@ -1,3 +1,6 @@
+import { AlbumsDB } from "./api.js";
+
+
 export class Albums { 
 
     constructor(albums) {
@@ -103,6 +106,43 @@ export class Albums {
             });
 
             this.updateAlbum();
+
+        });
+
+    };
+
+    genreFilter() {
+
+        const body = document.querySelector('body');
+
+        body.addEventListener('click', (e) => {
+
+            const target = e.target;
+
+            if (target.classList.contains('genres')) {
+
+                const btn = target.closest('.genres');
+                
+                const genre = btn.innerText;
+                
+                if (genre === 'Todos') {
+
+                    this.filteredAlbums = this.albums;
+
+                } else {
+
+                    this.filteredAlbums = this.albums.filter(album => album.genre === genre);
+
+                }
+
+                this.updateAlbum();
+
+            } else {
+
+                this.filteredAlbums = this.albums;
+                this.updateAlbum();
+
+            };
 
         });
 

@@ -11,6 +11,7 @@ function routine() {
     const albums = new Albums(albumsList);
     albums.updateAlbum();
     albums.priceFilter();
+    albums.genreFilter();
 
 };
 
