@@ -14,14 +14,63 @@
     --gray-8: #fdfeff;
 
     font-size: clamp(40%, 1% + 2vw, 62.5%);
-    font-family: 'Inter', sans-serif;
 }
 
 * {
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Inter', sans-serif;
 
-body * {
+    color: var(--gray-2);
+    background-color: var(--gray-8);
+}
+
+#main__container,
+.header__content {
     max-width: 1024px;
+    margin: 0 auto;
+}
+
+html.dark {
+    body, .header__container {
+        background-color: var(--gray-1);
+        color: var(--gray-7);
+    }
+
+    .header__button__theme--toggle {
+        background-color: var(--gray-3);
+        background-image: url(../assets/icons/sun-fill.svg);
+        color: var(--gray-7);
+    }
+
+    .section__filter__title,
+    .setprice__title,
+    .setprice__range,
+    .section__albums__title,
+    .album__title,
+    .album-price {
+        color: var(--gray-7);
+    }
+
+    .genres {
+        background-color: var(--gray-2);
+        color: var(--gray-6);
+    }
+
+    .genres:hover,
+    .genres:focus {
+        background-color: var(--gray-7);
+        color: var(--gray-2);
+    }
+
+    .band-name,
+    .album-genre {
+        color: var(--gray-6);
+    }
+
+    .albums--display {
+        background-color: var(--gray-2);
+    }
 }

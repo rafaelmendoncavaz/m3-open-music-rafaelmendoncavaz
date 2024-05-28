@@ -1,1 +1,44 @@
 @import url(./globalStyles.css);
+
+#section__filter__container {
+    margin-top: 1.6rem;
+    padding: 1.6rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.section__filter__title {
+    font-size: 2.4rem;
+    color: var(--gray-2);
+    font-weight: bold;
+}
+
+.section__filter__genres {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+}
+
+.genres {
+    outline: none;
+    border: solid .1rem transparent;
+    border-radius: .4rem;
+    padding: 1rem 1.1rem;
+
+    background-color: var(--gray-6);
+    color: var(--gray-3);
+
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background .2s;
+}
+
+.genres:hover,
+.genres:focus {
+    background-color: var(--gray-2);
+    color: var(--gray-7);
+}
