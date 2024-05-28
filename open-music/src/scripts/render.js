@@ -3,6 +3,7 @@ export class Albums {
     constructor(albums) {
 
         this.albums = albums;
+        this.filteredAlbums = albums;
 
     };
 
@@ -71,11 +72,37 @@ export class Albums {
         const ul = document.querySelector('.albums__list__content');
         ul.innerHTML = '';
 
-        this.albums.forEach(album => {
+        this.filteredAlbums.forEach(album => {
 
             const card = this.renderAlbum(album);
 
             ul.appendChild(card);
+
+        });
+
+    };
+
+    priceFilter() {
+
+        const input = document.querySelector('#input--price-range');
+        const span = document.querySelector('#price--range');
+
+        input.addEventListener('input', (e) => {
+
+            const inputValue = e.target.value;
+            
+            span.textContent = `R$ ${inputValue}`
+
+            this.filteredAlbums = this.albums.filter(album => {
+
+                const albumPrice = parseInt(album.price);
+                
+
+                return albumPrice <= parseInt(inputValue);
+
+            });
+
+            this.updateAlbum();
 
         });
 

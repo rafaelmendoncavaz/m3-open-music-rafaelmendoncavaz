@@ -1,13 +1,39 @@
-let lightMode = true;
+export function toggleTheme() {
 
-const toggleButton = document.querySelector('.header__button__theme--toggle');
+    const toggleButton = document.querySelector('.header__button__theme--toggle');
+    
+    toggleButton.addEventListener('click', () => {
 
-toggleButton.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
 
-    document.documentElement.classList.toggle('dark');
+        if (document.documentElement.classList.contains('dark')) {
 
-    const mode = lightMode ? 'dark' : 'light';
+            localStorage.setItem('@openMusic:theme:', 'true');
 
-    lightMode = !lightMode;
+        } else {
 
-});
+            localStorage.setItem('@openMusic:theme:', 'false');
+
+        };
+
+    });
+
+};
+
+export function loadTheme() {
+
+    const theme = JSON.parse(localStorage.getItem('@openMusic:theme:'));
+
+    if (theme) {
+
+        document.documentElement.classList.add('dark');
+
+    } else {
+
+        document.documentElement.classList.remove('dark');
+
+    };
+
+};
+
+
