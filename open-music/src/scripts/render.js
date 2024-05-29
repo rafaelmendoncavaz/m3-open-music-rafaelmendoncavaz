@@ -1,12 +1,48 @@
 import { AlbumsDB } from "./api.js";
 
-
-export class Albums { 
+export class Database {
 
     constructor(albums) {
 
         this.albums = albums;
         this.filteredAlbums = albums;
+
+    };
+
+    async load() {
+
+        try {
+
+            const response = await AlbumsDB.list();
+
+            if(!response.ok) {
+
+                throw new Error(`Error loading data`);
+
+            };
+
+            const data = await response.json();
+
+            this.albums = data;
+            this.filteredAlbums = data;
+
+            this.updateAlbum();
+
+        } catch (error) {
+
+            console.error('Error fetching data', error);
+
+        };
+
+    };
+
+};
+
+export class Albums extends Database { 
+
+    constructor(albums) {
+
+        super(albums);
 
     };
 
@@ -71,7 +107,7 @@ export class Albums {
     };
 
     updateAlbum() {
-
+        
         const ul = document.querySelector('.albums__list__content');
         ul.innerHTML = '';
 
@@ -94,7 +130,7 @@ export class Albums {
 
             const inputValue = e.target.value;
             
-            span.textContent = `R$ ${inputValue}`
+            span.textContent = `R$ ${inputValue}`;
 
             this.filteredAlbums = this.albums.filter(album => {
 
@@ -113,13 +149,17 @@ export class Albums {
 
     genreFilter() {
 
-        const body = document.querySelector('body');
+        const section = document.querySelector('#section__filter__container');
 
-        body.addEventListener('click', (e) => {
+        section.addEventListener('click', (e) => {
 
             const target = e.target;
 
             if (target.classList.contains('genres')) {
+
+                document.querySelector('#input--price-range').value = '150';
+                document.querySelector('#input--price-range').style = 'background: var(--brand-1)';
+                document.querySelector('#price--range').textContent = 'R$ 150';
 
                 const btn = target.closest('.genres');
                 

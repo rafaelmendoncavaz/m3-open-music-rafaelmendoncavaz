@@ -1,17 +1,20 @@
 import * as theme from './theme-mode.js';
-import { albumsList } from './albumsDb.js';
 import { applyInputRangeStyle } from './input-range.js';
 import { Albums } from './render.js';
+import { AlbumsDB } from './api.js';
 
-function routine() {
+async function routine() {
 
     theme.toggleTheme();
     theme.loadTheme();
     applyInputRangeStyle();
-    const albums = new Albums(albumsList);
-    albums.updateAlbum();
-    albums.priceFilter();
-    albums.genreFilter();
+
+        const albumsList = await AlbumsDB.list();
+        const album = new Albums(albumsList);
+
+        album.updateAlbum();
+        album.priceFilter();
+        album.genreFilter();
 
 };
 

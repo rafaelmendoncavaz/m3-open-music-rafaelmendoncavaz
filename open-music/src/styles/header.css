@@ -1,33 +1,46 @@
 @import url(./globalStyles.css);
 
 .header__container {
+
     color: var(--gray-2);
     background-color: var(--gray-8);
+
     position: sticky;
     left: 0px;
     top: 0px;
     z-index: 1;
+
 }
 
 .header__content {
-    border-bottom: solid 0.3rem var(--brand-2);
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 4.8rem 0;
+
+    border-bottom: solid 0.3rem var(--brand-2);
+
 }
 
 .header__title {
+
     font-size: 4rem;
     font-weight: bold;
+
 }
 
 .header__title span {
+
     color: var(--brand-2);
+
 }
 
 .header__button__theme--toggle {
+
     background-color: var(--gray-6);
+    
     padding: .9rem 1.4rem;
     border: solid transparent;
     border-radius: .5rem;

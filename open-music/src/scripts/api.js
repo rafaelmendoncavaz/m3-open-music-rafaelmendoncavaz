@@ -6,14 +6,7 @@ export class AlbumsDB {
 
         return fetch(endpoint)
         .then(data => data.json())
-        .then(({title, genre, band, price, img}) => ({
-            title,
-            genre,
-            band,
-            price,
-            img
-        }));
-
+        
     };
 
 };
