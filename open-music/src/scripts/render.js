@@ -6,6 +6,10 @@ export class Database {
 
         this.albums = albums;
         this.filteredAlbums = albums;
+        this.currentPrice = Infinity;
+        this.currentGenre = 'Todos';
+        this.genreFilter();
+        this.priceFilter();
 
     };
 
@@ -121,6 +125,22 @@ export class Albums extends Database {
 
     };
 
+    combinedFilter() {
+
+        this.filteredAlbums = this.albums.filter(album => {
+
+            const albumPrice = parseInt(album.price);
+            const matchesPrice = albumPrice <= this.currentPrice;
+            const matchesGenre = this.currentGenre === 'Todos' || album.genre === this.currentGenre;
+
+            return matchesPrice && matchesGenre;
+
+        });
+
+        this.updateAlbum();
+
+    }
+
     priceFilter() {
 
         const input = document.querySelector('#input--price-range');
@@ -128,20 +148,11 @@ export class Albums extends Database {
 
         input.addEventListener('input', (e) => {
 
-            const inputValue = e.target.value;
+            this.currentPrice = parseInt(e.target.value);
             
-            span.textContent = `R$ ${inputValue}`;
+            span.textContent = `R$ ${this.currentPrice}`;
 
-            this.filteredAlbums = this.albums.filter(album => {
-
-                const albumPrice = parseInt(album.price);
-                
-
-                return albumPrice <= parseInt(inputValue);
-
-            });
-
-            this.updateAlbum();
+            this.combinedFilter();
 
         });
 
@@ -157,32 +168,17 @@ export class Albums extends Database {
 
             if (target.classList.contains('genres')) {
 
-                document.querySelector('#input--price-range').value = '150';
-                document.querySelector('#input--price-range').style = 'background: var(--brand-1)';
-                document.querySelector('#price--range').textContent = 'R$ 150';
-
                 const btn = target.closest('.genres');
                 
-                const genre = btn.innerText;
-                
-                if (genre === 'Todos') {
-
-                    this.filteredAlbums = this.albums;
-
-                } else {
-
-                    this.filteredAlbums = this.albums.filter(album => album.genre === genre);
-
-                }
-
-                this.updateAlbum();
+                this.currentGenre = btn.innerText;
 
             } else {
 
-                this.filteredAlbums = this.albums;
-                this.updateAlbum();
+                this.currentGenre = 'Todos';
 
             };
+
+            this.combinedFilter();
 
         });
 

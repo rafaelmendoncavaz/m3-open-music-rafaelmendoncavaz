@@ -13,6 +13,7 @@ async function routine() {
         const album = new Albums(albumsList);
 
         album.updateAlbum();
+        album.combinedFilter();
         album.priceFilter();
         album.genreFilter();
 
